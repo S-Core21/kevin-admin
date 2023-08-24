@@ -1,0 +1,13 @@
+.dashboard{
+    display: flex;
+    gap: 2rem;
+}
+.dashboard .dNav{
+    width: 17%;
+    border-right: 3px solid gray;
+    position: fixed;
+}
+.dashboard .body{
+    width: 80%;
+    margin-left: 17.5%;
+}

@@ -1,0 +1,62 @@
+.signUp{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 35%;
+    margin: auto;
+    margin-top: 2%;
+    padding: 32px;
+}
+.signUp h1{
+    font-family: Monts bold;
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+.signUp form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.signUp form div label{
+    display: flex;
+    flex-direction: column;
+    font-family: Monts boldl;
+    font-size: 18px;
+}
+.signUp form div input{
+    padding: 10px;
+    font-size: 18px;
+    font-family: Monts light;
+    outline: none;
+    background-color: transparent;
+}
+.signUp form button{
+    background-color: transparent;
+    padding: 10px;
+    font-family: Monts light;
+    border-radius: 5px;
+    background-color: #0145Fe;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.sign_d{
+    text-align: center;
+    margin-top: -1rem;
+    border: 1px solid #0145Fe;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0145Fe;
+}
+.sign_d a{
+    text-decoration: none;
+    color: inherit;
+    font-family: Monts light;
+    font-weight: 600;
+    font-size: 20px;
+}
+.signUp strong{
+    color: green;
+    font-family: Monts bold;
+    font-size: 22px;
+}

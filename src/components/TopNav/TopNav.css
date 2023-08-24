@@ -1,0 +1,12 @@
+.topNav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    border-bottom: 2px solid gray;
+    align-items: center;
+}
+.topNav div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

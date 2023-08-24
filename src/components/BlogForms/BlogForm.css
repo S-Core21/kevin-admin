@@ -1,0 +1,48 @@
+.blogForm{
+    padding-block: 2rem;
+}
+.blogForm h1{
+    font-family: Monts bold;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.blogForm form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70%;
+    margin: auto;
+}
+.blogForm form label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: Monts Light;
+    font-size: 20px;
+}
+.blogForm form .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.blogForm form input{
+    font-size: 18px;
+    padding: 20px;
+    outline: none;
+    font-family: Monts light;
+    border-radius: 20px;
+    border: 3px solid gainsboro;
+}
+.blogForm form button{
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #0145FE;
+    color: white;
+}
+.blogForm .blogBody{
+    font-size: 20px;
+    font-family: Monts light;
+}

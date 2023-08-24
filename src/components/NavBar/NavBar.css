@@ -1,0 +1,41 @@
+.navbar{
+    min-height: 100vh;
+    /* border: 1px solid; */
+    /* border-right: 1px solid #0145FE; */
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+.navbar nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+} 
+.navbar p{
+    font-family: Monts light;
+    font-size: 14px;
+    opacity: .7;
+}
+.navbar li{
+    font-family: Monts boldl;
+    font-size: 18px;
+    color: black;
+}
+.active{
+    border-bottom: 3px solid gray;
+    padding: 10px;
+    /* background-color: #0145FE; */
+    color: white;
+}

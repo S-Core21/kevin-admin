@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import BlogForm from './components/BlogForms/BlogForm';
+import { useEffect, useState } from 'react';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Protected from './pages/Protected';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import SignUp from './pages/SignUp/SignUp';
+import Login from './pages/Login/Login';
 
 function App() {
+
+  const [signedIn, setSignedin] = useState()
+  const [loginData, setloginData] = useState()
+  
+ const updateLog = (newValue) =>{
+  setSignedin(newValue)
+ }
+
+ const data = localStorage.getItem('data')
+
+useEffect(()=>{
+  setloginData(JSON.parse(data)) 
+  console.log(loginData)
+}, [data])
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <>
+      <Routes>
+      <Route path='/login' element={<Login updateLog = {updateLog} />} />
+        <Route path='/' element={<Dashboard />}>
+          <Route path='/' element={<BlogForm />} />
+          <Route path='/create-blog' element={<BlogForm />} />
+          {/* <Route path='/blogs' element={<BlogForm/>} /> */}
+        </Route>
+        <Route path='/sign-up' element={<SignUp/>} />
+        <Route path='/login' element={<Login updateLog = {updateLog} />} />
+      </Routes>
+        {/* <Dashboard /> */}
+      </>
+    </BrowserRouter>
   );
 }
 
