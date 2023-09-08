@@ -12,6 +12,7 @@ const SignUp = () => {
         username: '',
         email: '',
         password: '',
+        access: '',
         twitter: '',
         linkedin: ''
     })
@@ -27,6 +28,7 @@ const SignUp = () => {
         username : formData.username,
         email: formData.email,
         password: formData.password,
+        access: formData.access,
         linkedInId : formData.linkedin,
         twitterId : formData.twitter
     }
@@ -40,7 +42,7 @@ const SignUp = () => {
         .then(res =>{
             console.log(res)
             console.log('data sent')
-            setSignUpsuccess('Registartion successful. Proceed to Login')
+            setSignUpsuccess('User successfully added. Proceed to view users')
         })
         .catch(err=>{
             console.log(err)
@@ -50,7 +52,7 @@ const SignUp = () => {
   return (
     <div className='signUp'>
         <h1>
-            Sign-Up
+            Add User
         </h1>
         <form onSubmit={handleSubmit}>
             <div>
@@ -88,6 +90,18 @@ const SignUp = () => {
             </div>
             <div>
             <label>
+                Access :  
+                <input
+                 type='text'
+                 name='access'
+                 onChange={handleChange}
+                 value={formData.access}
+                 placeholder='admin or Sub-admin'
+                 />
+            </label>
+            </div>
+           {/* <div>
+            <label>
                 Twitter Link (URL) :  
                 <input
                  type='text'
@@ -107,16 +121,15 @@ const SignUp = () => {
                  value={formData.linkedin}
                  />
             </label>
-            </div>
+            </div> */}
             <strong>
              {signUpsuccess}
             </strong>
             
-            <button type='submit'>Register</button>
-            <span className='sign_d'><Link to= '/'>Log in </Link> </span>
+            <button type='submit'>Add</button>
         </form>
     </div>
   )
 }
 
-export default SignUp
+export default SignUp 

@@ -1,0 +1,22 @@
+.ViewBlogs{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 2rem 2rem;
+}
+.ViewBlogs section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.2rem;
+    padding: 5px;
+}
+.ViewBlogs .tt{
+    margin-bottom: -3rem;
+    font-family: Monts boldl;
+}
+.ViewBlogs .del{
+    margin-top: -2rem;
+    color: red;
+    font-family: Monts light;
+    font-size: 18px;
+}

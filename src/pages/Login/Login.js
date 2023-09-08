@@ -7,7 +7,7 @@ import { Link, Navigate } from 'react-router-dom'
 
 const Login = ({updateLog}) => {
     const [loggedIn, setLoggedIn] = useState(false)
-
+    const [error, setError] = useState('')
 
     const [formData, setFormData] = useState({
         username: '',
@@ -42,8 +42,9 @@ const Login = ({updateLog}) => {
         })
         .catch(err=>{
             console.log(err)
+            setError('Wrong Credentials')
         })
-        
+      
         console.log(loginData)
     }
 
@@ -89,8 +90,8 @@ useEffect(()=>{
                  />
             </label>
             </div>
+            <span style={{color:'red', fontFamily: 'Monts boldl'}}>{error}</span>
             <button type='submit'>Login</button>
-            <span className='sign_d'><Link to= '/sign-up'>Sign up </Link> </span>
         </form>
     </div>
     }

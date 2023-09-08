@@ -39,6 +39,7 @@
     border: none;
     color: white;
     font-size: 20px;
+    cursor: pointer;
 }
 .sign_d{
     text-align: center;

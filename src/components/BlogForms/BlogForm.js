@@ -9,6 +9,7 @@ const BlogForm = () => {
     const user = localStorage.getItem('data')
     const [data, setData] = useState(JSON.parse(user))
     const [editorState, setEditorState] = useState()
+    const [isBlog, setIsBlog] = useState('')
 
 
 
@@ -62,6 +63,7 @@ const BlogForm = () => {
             .then(response => {
                 console.log('blog added')
                 console.log(response.data)
+                setIsBlog('Blog added Successfully')
             })
             .catch(err => {
                 console.log(err)
@@ -221,6 +223,7 @@ const BlogForm = () => {
                         }}
                     />
                 </div>
+                <strong>{isBlog}</strong>
                 <button type='submit'>Submit</button>
             </form>
         </div>

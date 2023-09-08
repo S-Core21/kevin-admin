@@ -9,6 +9,15 @@ import TopNav from '../../components/TopNav/TopNav'
 const Dashboard = () => {
     const isLogged = localStorage.getItem('logged')
 
+    useEffect(()=>{
+        if(isLogged){
+            setTimeout(()=>{
+                localStorage.removeItem('logged')
+            },3* 60 * 60 * 1000)
+        }
+    })
+    
+
     return (
         <>
             {

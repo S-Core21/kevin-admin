@@ -1,0 +1,14 @@
+.profile h2{
+    font-size: 30px;
+    font-family: Monts bold;
+}
+.profile #subss{
+    width: 20%;
+    padding: 10px;
+    margin-left: auto;
+}
+.profile .uploadMsg{
+    font-family: Monts boldl;
+    color: green;
+    font-size: 22px;
+}

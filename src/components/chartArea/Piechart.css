@@ -1,0 +1,39 @@
+.PieChart h1 {
+    text-align: center;
+    font-family: A bold;
+    font-size: 25px;
+    /* margin-left: -4rem; */
+  }
+  .PieChart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 20px;
+  }
+  .PieChart{
+    object-fit: cover;
+  }
+  .pieCon {
+    margin: auto;
+    /* margin-bottom: -5rem; */
+    padding: 20px;
+  }
+  
+  @media (max-width: 670px) {
+    .PieChart{
+      margin-left: 1rem;
+      width: 85%;
+    }
+    .PieChart h1 {
+      font-size: 16px;
+    }
+    .pieCon {
+      width: 90%;
+      margin-bottom: -3rem;
+    }
+  }
+  
