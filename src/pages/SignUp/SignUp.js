@@ -100,7 +100,7 @@ const SignUp = () => {
                  />
             </label>
             </div>
-           {/* <div>
+           <div>
             <label>
                 Twitter Link (URL) :  
                 <input
@@ -121,7 +121,7 @@ const SignUp = () => {
                  value={formData.linkedin}
                  />
             </label>
-            </div> */}
+            </div>
             <strong>
              {signUpsuccess}
             </strong>

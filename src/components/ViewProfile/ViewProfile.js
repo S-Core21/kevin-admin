@@ -241,7 +241,7 @@ const ViewProfile = () => {
                         <input
                             type='text'
                             name='description'
-                            // onChange={handleChange}
+                            onChange={handleChange}
                              readOnly = {edit ? false : true}
                             value={formData.description}
                         />

@@ -47,7 +47,7 @@ function App() {
             <Route path='/videos' element={<Videos />} />
             <Route path='/add-videos' element={<AddVideos />} />
           </Route>
-            {/* <Route path='/add' element={<SignUp />} /> */}
+            <Route path='/add' element={<SignUp />} />
           <Route path='/login' element={<Login updateLog={updateLog} />} />
         </Routes>
         {/* <Dashboard /> */}
