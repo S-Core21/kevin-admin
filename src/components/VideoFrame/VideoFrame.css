@@ -12,6 +12,12 @@
     font-family: Monts light;
     line-height: 22px;
 }
+.videoFrame .video .ediDel{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    cursor: pointer;
+}
 .videoFrame .video .del{
     background-color: transparent;
     border: 1px solid red;
@@ -21,4 +27,13 @@
     font-family: Monts light;
     float: right;
     margin-top: .5rem;
+}
+.videoFrame .video #edit{
+    border: 1px solid black;
+    color: black;
+
+}
+.videoFrame .video #edit a{
+    text-decoration: none;
+    color: inherit;
 }

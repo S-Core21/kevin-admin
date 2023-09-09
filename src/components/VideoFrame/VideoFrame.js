@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './VideoFrame.css'
 import axios from 'axios'
 
 const VideoFrame = () => {
+    const [videoData, setVideoData] = useState({})
 
     const videos = ['https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg','https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg','https://youtube.com/embed/T7pUh8XlGgg']
 
@@ -10,6 +12,7 @@ const VideoFrame = () => {
         axios.delete(`${id}`)
         .then(res=>{
             console.log(res)
+            setVideoData(res.data)
         })
         .catch(err=>{
             console.log(err)
@@ -31,9 +34,17 @@ const VideoFrame = () => {
                 >
                 </iframe>
                 <p>The Gida story is an experience to learn from and reference</p>
+                <span className='ediDel'>
+                <button className='del' id='edit'>
+                    <Link to='/edit-videos' state={videoData.id}>
+                        Edit
+                    </Link>
+                    
+                </button>
                 <button className='del' onClick={handleDelete(item)}>
                     Delete 
                 </button>
+                </span>
                 </div>
             })
         }

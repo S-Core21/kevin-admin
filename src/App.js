@@ -1,5 +1,5 @@
 import BlogForm from './components/BlogForms/BlogForm';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ViewBlogs from './pages/ViewBlogs/ViewBlogs';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -12,22 +12,23 @@ import ViewProfile from './components/ViewProfile/ViewProfile';
 import Videos from './pages/Videos/Videos';
 import Main from './pages/main/Main';
 import AddVideos from './pages/AddVideos/AddVideos';
+import VideoEdit from './components/VideoEdit/VideoEdit';
 
 function App() {
 
-  const [signedIn, setSignedin] = useState()
-  const [loginData, setloginData] = useState()
+  // const [signedIn, setSignedin] = useState()
+  // const [loginData, setloginData] = useState()
 
-  const updateLog = (newValue) => {
-    setSignedin(newValue)
-  }
+  // const updateLog = (newValue) => {
+  //   setSignedin(newValue)
+  // }
 
-  const data = localStorage.getItem('data')
+  // const data = localStorage.getItem('data')
 
-  useEffect(() => {
-    setloginData(JSON.parse(data))
-    console.log(loginData)
-  }, [data])
+  // useEffect(() => {
+  //   setloginData(JSON.parse(data))
+  //   console.log(loginData)
+  // }, [data])
 
 
 
@@ -35,7 +36,7 @@ function App() {
     <BrowserRouter>
       <>
         <Routes>
-          <Route path='/login' element={<Login updateLog={updateLog} />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/' element={<Dashboard />}>
             <Route path='/' element={<Main />} />
             <Route path='/create-blog' element={<BlogForm />} />
@@ -46,9 +47,10 @@ function App() {
             <Route path='/profile' element={<ViewProfile />} />
             <Route path='/videos' element={<Videos />} />
             <Route path='/add-videos' element={<AddVideos />} />
+            <Route path='/edit-videos' element={<VideoEdit />} />
           </Route>
             <Route path='/add' element={<SignUp />} />
-          <Route path='/login' element={<Login updateLog={updateLog} />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
         {/* <Dashboard /> */}
       </>

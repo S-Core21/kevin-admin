@@ -2,10 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../SignUp/SignUp.css'
-import { Link, Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 
-const Login = ({updateLog}) => {
+const Login = () => {
     const [loggedIn, setLoggedIn] = useState(false)
     const [error, setError] = useState('')
 
@@ -37,7 +37,6 @@ const Login = ({updateLog}) => {
             setLoginData(res.data)
             localStorage.setItem('data', JSON.stringify(res.data))
             localStorage.setItem('logged', loggedIn)
-            updateLog(true)
             console.log('data sent')
         })
         .catch(err=>{

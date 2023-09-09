@@ -3,6 +3,7 @@ import { useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './BlogForm.css'
 
 const BlogForm = () => {
@@ -10,7 +11,9 @@ const BlogForm = () => {
     const [data, setData] = useState(JSON.parse(user))
     const [editorState, setEditorState] = useState()
     const [isBlog, setIsBlog] = useState('')
-
+    const [isError, setIsError] = useState('')
+    const [selectedValue, setSelectedValue] = useState()
+    const [sub, setSub] = useState(true)
 
 
     const [formData, setFormData] = useState({
@@ -39,13 +42,16 @@ const BlogForm = () => {
         })
 
     }
+    function handleSelect (e){
+        setSelectedValue(e.target.value)
+    }
 
     const body = {
         title: formData.title,
         snippet: formData.snippet,
         image: formData.image,
         author: formData.author,
-        categories: formData.categories,
+        categories: selectedValue,
         readMins: formData.mins,
         body: editorState,
         tagOne: formData.tagOne,
@@ -58,17 +64,25 @@ const BlogForm = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
+        setSub(false)
         console.log('prevented')
         axios.post('https://blogapi-31c0.onrender.com/api/blogs', body)
             .then(response => {
                 console.log('blog added')
                 console.log(response.data)
-                setIsBlog('Blog added Successfully')
+                setIsBlog('Blog added Successfully- View Blog')
+                setSub(true)
             })
             .catch(err => {
                 console.log(err)
+                setSub(true)
+                setIsError('Could not upload Blog at the moment')
             })
     }
+
+    useEffect(()=>{
+        setSub(true)
+    }, [])
 
     return (
         <>
@@ -98,7 +112,8 @@ const BlogForm = () => {
                             name='snippet'
                             value={formData.snippet}
                             onChange={handleChange}
-                            placeholder='maximum of 200 characters'
+                            maxLength={50}
+                            placeholder='maximum of 50 characters'
                         />
                     </label>
                 </div>
@@ -177,13 +192,17 @@ const BlogForm = () => {
                 <div>
                     <label htmlFor='categories'>
                         Categories:
-                        <input
-                            required={true}
-                            type='text'
-                            name='categories'
-                            value={formData.categories}
-                            onChange={handleChange}
-                        />
+                       <select value={selectedValue} onChange={handleSelect}>
+                        <option value='Education'>Education</option>
+                        <option value='Technology'>Technology</option>
+                        <option value='Blockchain'>Blockchain</option>
+                        <option value='Cryptocurrency'>Cryptocurrency</option>
+                        <option value='Featured'>Featured</option>
+                        <option value='Tutorials'>Tutorials</option>
+                        <option value='Reviews'>Reviews</option>
+                        <option value='Coding/Dev'>Coding/Dev</option>
+                        <option value='Productivity'>Productivity</option>
+                       </select>
                     </label>
                 </div>
                 <div>
@@ -223,8 +242,9 @@ const BlogForm = () => {
                         }}
                     />
                 </div>
-                <strong>{isBlog}</strong>
-                <button type='submit'>Submit</button>
+                <strong> <Link to={`https://kevin-blog-three.vercel.app/articles/${formData.title}`}>{isBlog}</Link> </strong>
+                <strong>{isError}</strong>
+                <button type='submit' disabled ={ sub ? false : true} >{sub ? 'Submit' : 'Loading...'}</button>
             </form>
         </div>
         </>

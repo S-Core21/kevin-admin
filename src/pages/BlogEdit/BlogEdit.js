@@ -11,8 +11,11 @@ const BlogEdit = () => {
     const location = useLocation()
     const {state} = location
     const [editorstate, setEditorstate] = useState()
-    const user = localStorage.getItem('data')
-    const [data, setData] = useState(JSON.parse(user))
+    // const user = localStorage.getItem('data')
+    // const [data, setData] = useState(JSON.parse(user))
+    const [selectedValue, setSelectedValue] = useState()
+    const [sub, setSub] = useState(true)
+
 
     
     const [isBlog, setIsBlog] = useState('')
@@ -30,29 +33,12 @@ const BlogEdit = () => {
         .catch(err => {
             console.log(err)
         })
+        setSub(true)
     },[])
 
     useEffect(()=>{
         setEditorstate(blogdata.body)
     }, [blogdata])
-
-    // const [formData, setFormData] = useState({
-    //     title: blogdata.title,
-    //     snippet: blogdata.snippet,
-    //     image: blogdata.image,
-    //     author: data.username,
-    //     categories: blogdata.categories,
-    //     mins: blogdata.readMins,
-    //     body: blogdata.body,
-    //     tagOne: blogdata.tagOne,
-    //     tagTwo: blogdata.tagTwo,
-    //     tagThree: blogdata.tagThree,
-    //     tagFour: blogdata.tagFour,
-    //     tagFive: blogdata.tagFive,
-    //     tagSix: blogdata.tagSix,
-    // })
-
-    // console.log(formData.tagFive)
 
 
     function handleChange(e) {
@@ -63,13 +49,17 @@ const BlogEdit = () => {
 
     }
 
+    function handleSelect (e){
+        setSelectedValue(e.target.value)
+    }
+
     const updatedBlog = {
         id: state,
         title: blogdata.title,
         snippet: blogdata.snippet,
         image: blogdata.image,
         author: blogdata.author,
-        categories: blogdata.categories,
+        categories: selectedValue,
         readMins: blogdata.mins,
         body: editorstate,
         tagOne: blogdata.tagOne,
@@ -82,16 +72,19 @@ const BlogEdit = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
+        setSub(false)
         console.log('prevented')
         axios.put(`https://blogapi-31c0.onrender.com/api/blogs/${state}`, updatedBlog)
             .then(response => {
                 console.log('blog added')
                 console.log(response.data)
                 setBlogdata(response.data)
+                setSub(true)
                 setIsBlog('Blog edited Successfully')
             })
             .catch(err => {
                 console.log(err)
+                setSub(true)
             })
     }
 
@@ -205,17 +198,21 @@ const BlogEdit = () => {
                 </label>
             </div>
             <div>
-                <label htmlFor='categories'>
-                    Categories:
-                    <input
-                        required={true}
-                        type='text'
-                        name='categories'
-                        value={blogdata.categories}
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
+                    <label htmlFor='categories'>
+                        Categories:
+                       <select value={selectedValue} onChange={handleSelect}>
+                        <option value='Education'>Education</option>
+                        <option value='Technology'>Technology</option>
+                        <option value='Blockchain'>Blockchain</option>
+                        <option value='Cryptocurrency'>Cryptocurrency</option>
+                        <option value='Featured'>Featured</option>
+                        <option value='Tutorials'>Tutorials</option>
+                        <option value='Reviews'>Reviews</option>
+                        <option value='Coding/Dev'>Coding/Dev</option>
+                        <option value='Productivity'>Productivity</option>
+                       </select>
+                    </label>
+                </div>
             <div>
                 <label htmlFor='mins'>
                     Read Mins:
@@ -254,7 +251,7 @@ const BlogEdit = () => {
                 />
             </div>
             <strong>{isBlog}</strong>
-            <button type='submit'>Submit</button>
+            <button type='submit' disabled ={ sub ? false : true} >{sub ? 'Submit' : 'Loading...'}</button>
         </form>
     </div>
     }

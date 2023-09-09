@@ -27,11 +27,19 @@
 }
 .blogForm form input{
     font-size: 18px;
-    padding: 20px;
+    padding: 10px 20px;
     outline: none;
     font-family: Monts light;
-    border-radius: 20px;
-    border: 3px solid gainsboro;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    word-wrap: break-all;
+    white-space: pre-wrap;
+}
+.blogForm form  select{
+    padding: 10px;
+    font-family: Monts light;
+    font-size: 19px;
+    border-radius: 10px;
 }
 .blogForm form button{
     padding: 20px;
@@ -50,5 +58,8 @@
 .blogForm strong{
     color: green;
     font-family: Monts bold;
-    font-size: 20px;
+    font-size: 16px;
+}
+.blogForm strong a{
+    color: inherit;
 }

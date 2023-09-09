@@ -7,6 +7,12 @@
     background-color:#000068;
     color: white;
 }
+.navbar .logo{
+    width: 200px;
+    height: 50px;
+    /* border: 1px solid; */
+    object-fit: cover;
+}
 .navbar a{
     text-decoration: none;
     color: inherit;

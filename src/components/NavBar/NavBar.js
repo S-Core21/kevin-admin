@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './NavBar.css'
-import { Link, NavLink, NavNavLink, Navigate } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 const NavBar = () => {
     const user = localStorage.getItem('data')
@@ -14,12 +14,12 @@ const NavBar = () => {
         }else{
             setAdmin(false)
         }
-    })
+    },[])
   return (
     <>
     {
         admin && <div className='navbar'>
-        <img alt='logo' src='/images/flogo.png' className='logo' />
+        <img alt='logo' src='/images/flogo1.png' className='logo' />
         <nav>
             <ul>
             <NavLink to='/' activeclassname = 'active'><li>Dashboard</li></NavLink>

@@ -1,5 +1,5 @@
 .profile{
-    padding: 2rem 2rem 0rem 2rem;
+    padding: 2rem 2rem 4rem 2rem;
     margin-left: 4rem;
 }
 .profile h1{
@@ -38,11 +38,12 @@
     font-size: 22px;
 }
 .profile .profile_details input{
-    border-radius: 20px;
-    padding: 10px;
-    border: 3px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px 15px;
+    border: 1px solid gainsboro;
     outline: none;
     width: 350px;
+    font-size: 18px;
 }
 .profile .profile_details button{
     font-size: 20px;

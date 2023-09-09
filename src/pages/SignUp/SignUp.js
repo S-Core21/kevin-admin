@@ -1,7 +1,6 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import './SignUp.css'
 
 
@@ -57,7 +56,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
             <div>
             <label>
-                Fullname :  
+                Username :  
                 <input
                  type='text'
                  name='username'
@@ -79,7 +78,7 @@ const SignUp = () => {
             </div>
             <div>
             <label>
-                Passowrd :  
+                Password :  
                 <input
                  type='text'
                  name='password'
@@ -100,7 +99,7 @@ const SignUp = () => {
                  />
             </label>
             </div>
-           <div>
+           {/* <div>
             <label>
                 Twitter Link (URL) :  
                 <input
@@ -121,7 +120,7 @@ const SignUp = () => {
                  value={formData.linkedin}
                  />
             </label>
-            </div>
+            </div> */}
             <strong>
              {signUpsuccess}
             </strong>

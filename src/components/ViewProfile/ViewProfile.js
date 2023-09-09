@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import './ViewProfile.css'
-import { Colors } from 'chart.js'
 
 const ViewProfile = () => {
     const user = localStorage.getItem('data')
@@ -12,7 +11,6 @@ const ViewProfile = () => {
     const [msg, setMsg] = useState('')
     const [edit, setEdit] = useState(false)
     const [info, setInfo] = useState(false)
-    const [profileInfo, setProfileInfo] = useState(false)
 
     useEffect(()=>{
         axios.get(`https://blogapi-31c0.onrender.com/admin_dashboard/${profile._id}`)

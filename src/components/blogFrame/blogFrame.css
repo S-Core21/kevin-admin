@@ -16,11 +16,13 @@
 }
 .blogFrame article .tags{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    font-size: 14px;
 }
 .blogFrame article .tags small{
     background-color: #B5F9FF;
-    padding: 5px 15px;
+    padding: 5px;
     border-radius: 10px;
     color: #0145FE;
     font-weight: 700;

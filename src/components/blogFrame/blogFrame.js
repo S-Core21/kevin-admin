@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './blogFrame.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const BlogFrame = (props) => {
-    const url = props.title
-    
     // const encodedUrl = encodeURIComponent(url)
     // const decodeUrl = encodedUrl.replace(/%20/g, '-')
     // const data = {
