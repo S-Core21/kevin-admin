@@ -13,6 +13,7 @@ import Videos from './pages/Videos/Videos';
 import Main from './pages/main/Main';
 import AddVideos from './pages/AddVideos/AddVideos';
 import VideoEdit from './components/VideoEdit/VideoEdit';
+import Newsletter from './pages/Newsletter/Newsletter';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
             <Route path='/videos' element={<Videos />} />
             <Route path='/add-videos' element={<AddVideos />} />
             <Route path='/edit-videos' element={<VideoEdit />} />
+            <Route path='/newsletter' element={<Newsletter />} />
           </Route>
             <Route path='/add' element={<SignUp />} />
           <Route path='/login' element={<Login />} />

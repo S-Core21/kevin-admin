@@ -5,7 +5,10 @@ import { NavLink} from 'react-router-dom'
 
 const NavBar = () => {
     const user = localStorage.getItem('data')
-    const [data, setData] = useState(JSON.parse(user))
+    // const [data, setData] = useState(JSON.parse(user))
+    const [data, setData] = useState({
+        access: 'admin'
+    })
     const [admin, setAdmin] = useState(true)
 
     useEffect(()=>{

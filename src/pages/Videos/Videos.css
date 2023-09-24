@@ -2,11 +2,11 @@
     display: flex;
     margin-top: 2rem;
     margin-left: 3rem;
-    /* border: 2px solid; */
 }
 .videos section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3%;
+    width: 100%;
 }

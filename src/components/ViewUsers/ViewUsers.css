@@ -35,3 +35,11 @@
 .ViewUsers .headers li{
     font-weight: 600;
 }
+.delL{
+    margin-left: auto;
+    width: 50px !important;
+    cursor: pointer;
+}
+.delL img{
+    width: 30px !important;
+}

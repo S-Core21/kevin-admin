@@ -8,6 +8,7 @@ import './BlogForm.css'
 
 const BlogForm = () => {
     const user = localStorage.getItem('data')
+    const [base64, setBase64] = useState('')
     const [data, setData] = useState(JSON.parse(user))
     const [editorState, setEditorState] = useState()
     const [isBlog, setIsBlog] = useState('')
@@ -32,7 +33,6 @@ const BlogForm = () => {
         tagSix: '',
     })
 
-    console.log(formData.tagFive)
 
 
     function handleChange(e) {
@@ -42,14 +42,27 @@ const BlogForm = () => {
         })
 
     }
+
+    function handleimage(e){
+       const file = e.target.files[0]
+       const reader = new FileReader();
+       reader.onloadend = () =>{
+        const convertedString = reader.result;
+        setBase64(convertedString)
+       }
+       reader.readAsDataURL(file)
+    }
+console.log(base64)
+
     function handleSelect (e){
         setSelectedValue(e.target.value)
     }
 
+
     const body = {
         title: formData.title,
         snippet: formData.snippet,
-        image: formData.image,
+        image: base64,
         author: formData.author,
         categories: selectedValue,
         readMins: formData.mins,
@@ -100,6 +113,17 @@ const BlogForm = () => {
                             name='title'
                             value={formData.title}
                             onChange={handleChange}
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label htmlFor='image'>
+                        Image:
+                        <input
+                            required={true}
+                            type='file'
+                            name='image'
+                            onChange={handleimage}
                         />
                     </label>
                 </div>
@@ -242,7 +266,7 @@ const BlogForm = () => {
                         }}
                     />
                 </div>
-                <strong> <Link to={`https://kevin-blog-three.vercel.app/articles/${formData.title}`}>{isBlog}</Link> </strong>
+                <strong> <Link to={`https://kevin-blog-three.vercel.app/articles/${formData.title.split('').join('-')}`}>{isBlog}</Link> </strong>
                 <strong>{isError}</strong>
                 <button type='submit' disabled ={ sub ? false : true} >{sub ? 'Submit' : 'Loading...'}</button>
             </form>

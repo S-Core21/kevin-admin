@@ -19,13 +19,13 @@ const AddVideos = () => {
 
     const body ={
         title: formData.title,
-        link: formData.link
+        videoLink: formData.link
     }
 
     function handleSubmit(e) {
         e.preventDefault()
         console.log('prevented')
-        axios.post('https://blogapi-31c0.onrender.com/', body)
+        axios.post('https://blogapi-31c0.onrender.com/api/video_tutorials', body)
             .then(response => {
                 console.log('blog added')
                 console.log(response.data)
@@ -51,7 +51,7 @@ const AddVideos = () => {
                         Video Title :
                         <input
                             type='text'
-                            name='username'
+                            name='title'
                             onChange={handleChange}
                             value={formData.title}
                         />
@@ -62,7 +62,7 @@ const AddVideos = () => {
                         Video Link :
                         <input
                             type='text'
-                            name='username'
+                            name='link'
                             onChange={handleChange}
                             value={formData.link}
                         />

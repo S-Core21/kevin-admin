@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 import './VideoFrame.css'
 import axios from 'axios'
 
-const VideoFrame = () => {
-    const [videoData, setVideoData] = useState({})
+const VideoFrame = (props) => {
+    const [videoDa, setVideoDa] = useState({})
+    console.log(props.id, props.title, props.link)
 
-    const videos = ['https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg','https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg', 'https://youtube.com/embed/T7pUh8XlGgg','https://youtube.com/embed/T7pUh8XlGgg']
-
-    function handleDelete (id){
-        axios.delete(`${id}`)
+   
+    function handleDel (id){
+        axios.delete(`https://blogapi-31c0.onrender.com/api/videos/${id}`)
         .then(res=>{
             console.log(res)
-            setVideoData(res.data)
+            setVideoDa(res.data)
         })
         .catch(err=>{
             console.log(err)
@@ -20,34 +20,31 @@ const VideoFrame = () => {
     }
 
   return (
-    <div className='videoFrame'>
-        {
-            videos.map(item =>{
-                return <div className='video'> <iframe
-                src={item}
+    <div className='videoFrame'><div className='video' key={props.id} ><iframe
+                src={`https://youtube.com/embed/${props.link}`}
                 allowFullScreen={true}
                 title='Kevin'
                 height={200}
                 style={{
-                    width: '100%'
+                    // width: '100%'
                 }}
                 >
                 </iframe>
-                <p>The Gida story is an experience to learn from and reference</p>
+                <p>{props.title}</p>
                 <span className='ediDel'>
                 <button className='del' id='edit'>
-                    <Link to='/edit-videos' state={videoData.id}>
+                    <Link to='/edit-videos' state={{id: props.id, title: props.title, link: props.link}}>
                         Edit
                     </Link>
                     
                 </button>
-                <button className='del' onClick={handleDelete(item)}>
+                <button className='del' onClick={()=>{
+                    handleDel(props.id)
+                }} >
                     Delete 
                 </button>
                 </span>
                 </div>
-            })
-        }
        </div>
   )
 }
