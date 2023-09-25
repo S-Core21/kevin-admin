@@ -59,7 +59,7 @@ const AddVideos = () => {
                 </div>
         <div>
                     <label>
-                        Video Link :
+                        Video Link :  www.youtube.com/
                         <input
                             type='text'
                             name='link'

@@ -69,7 +69,7 @@ const BlogPost = () => {
                 <div key={item._id} className='blogPost'>
                   <BlogFrame
                     key={item._id}
-                    image='/images/blog1.png'
+                    image= {item.image ? item.image : '/images/blog1.png'}
                     date={item.createdAt.slice(0, 10)}
                     hashtag1={item.tagOne}
                     hashtag2={item.tagTwo}

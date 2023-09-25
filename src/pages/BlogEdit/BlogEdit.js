@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'
 import axios from 'axios';
@@ -11,6 +11,8 @@ const BlogEdit = () => {
     const location = useLocation()
     const {state} = location
     const [editorstate, setEditorstate] = useState()
+    const [isError, setIsError] = useState('')
+    const [base64, setBase64] = useState('')
     // const user = localStorage.getItem('data')
     // const [data, setData] = useState(JSON.parse(user))
     const [selectedValue, setSelectedValue] = useState()
@@ -48,6 +50,16 @@ const BlogEdit = () => {
         })
 
     }
+    
+    function handleimage(e){
+        const file = e.target.files[0]
+        const reader = new FileReader();
+        reader.onloadend = () =>{
+         const convertedString = reader.result;
+         setBase64(convertedString)
+        }
+        reader.readAsDataURL(file)
+     }
 
     function handleSelect (e){
         setSelectedValue(e.target.value)
@@ -85,6 +97,7 @@ const BlogEdit = () => {
             .catch(err => {
                 console.log(err)
                 setSub(true)
+                setIsError('Could not upload Blog at the moment')
             })
     }
 
@@ -112,6 +125,17 @@ const BlogEdit = () => {
                     />
                 </label>
             </div>
+            <div>
+                    <label htmlFor='image'>
+                        Image:
+                        <input
+                            required={true}
+                            type='file'
+                            name='image'
+                            onChange={handleimage}
+                        />
+                    </label>
+                </div>
             <div>
                 <label htmlFor='snippet'>
                     Snippet:
@@ -250,7 +274,8 @@ const BlogEdit = () => {
                     }}
                 />
             </div>
-            <strong>{isBlog}</strong>
+            <strong> <Link to={`https://kevin-blog-three.vercel.app/articles/${blogdata.title.split('').join('-')}`}>{isBlog}</Link> </strong>
+            <strong>{isError}</strong>
             <button type='submit' disabled ={ sub ? false : true} >{sub ? 'Submit' : 'Loading...'}</button>
         </form>
     </div>
