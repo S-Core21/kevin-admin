@@ -1,0 +1,390 @@
+.blogread{
+    width: 90%;
+    margin-left: 2rem;
+}
+.blogread .bread_title{
+    font-family: Monts bold;
+    font-size: 45px;
+    line-height: 68px;
+    margin-bottom: 20px;
+}
+.blogread .top .himg{
+    /* border: 1px solid; */
+    width: 100%;
+    background-color: black;
+}
+.braed_author .authorImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 55%;
+    padding: 10px;
+}
+.blogread .bread_date{
+    display: flex;
+    gap: 10px;
+    font-family: Monts light;
+    font-size: 14px;
+}
+.blogread .bread_date b a{
+    opacity: 1 !important;
+    text-decoration: none;
+    color: inherit;
+    font-family: Monts bold;
+    font-size: 18px;
+    line-height: 30px;
+}
+.blogread .bread_date .authorIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1 !important;
+}
+.blogread .share_socials{
+    padding: 2rem 0rem;
+}
+.blogread .share_socials h3{
+    font-family: Monts bold;
+    font-weight: 900;
+    line-height: 30px;
+    margin-bottom: 1rem;
+}
+.blogread .share_socials span img{
+    width: 40px;
+}
+.blogread .share_socials span a{
+    padding-right: 1rem;
+    text-decoration: none;
+}
+.blogread .braed_author{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    margin-bottom: 15%;
+    margin-top: 5rem;
+    align-items: center;
+    font-family: Monts bold;
+}
+.blogread .braed_author p{
+    border: 1px solid gray;
+    padding: 10px 15px;
+    font-family: Monts light;
+    border-radius: 5px;
+}
+.blogread .braed_author a{
+    text-decoration: none;
+    color: inherit;
+}
+.blogread .author_socials a{
+    padding-right: 10px;
+}
+.blogread .author_socials img{
+    width: 30px;
+}
+.otherReads{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0rem;
+    gap: 4%;
+    padding: 5px;
+    /* width: calc(88%/3); */
+}
+.otherReadsHeader{
+    margin-bottom: 1rem;
+    font-family: Monts bold;
+    font-size: 30px;
+    text-align: center;
+    z-index: 40;
+}
+hr{
+    z-index: 1;
+}
+.readMore{
+    display: flex;
+    margin-top: 3rem;
+    gap: 4.2rem;
+    padding: 5px;
+}
+.blogread .blog_article{
+    margin-bottom: 3rem;
+}
+.blogread .blog_article img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+.blogread .blog_article .blog_body{
+    margin-block: 4rem;
+}
+.blogread .bread_customTags ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.blogread .bread_customTags li{
+    background-color: #B5F9FF;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #0145FE;
+    font-weight: 700;
+    font-family: Monts light;
+    text-transform: capitalize;
+}
+.ql-container.ql-snow{
+    border: none !important;
+    font-family: Monts light;
+    font-size: 24px;
+    line-height: 26px;
+}
+.ql-container.ql-snow img{
+    /* border: 3px solid red; */
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    border: none;
+}
+.rcomments{
+    margin-top: -7rem;
+}
+.rcomments main{
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* color: rgb(102, 102, 102); */
+    color: black;
+}
+.rcomments main ul{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 5px;
+}
+.rcomments main ul li:nth-child(1){
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: Monts bold;
+}
+.rcomments main ul li:nth-child(2){
+    font-size: 18px;
+    font-family: Monts light;
+    margin-left: 0rem;
+    margin-top: .5rem;
+}
+.rcomments .replies{
+    margin-left: 0%;
+    margin-top: .5rem;
+    position: relative;
+}
+.rcomments .replies textarea{
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    margin-top: 1rem;
+    font-family: Monts light;
+}
+.rcomments .replies .send_replies{
+    position: absolute;
+    right: 0;
+    top: 20%;
+}
+.rcomments .all_repleis_con{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.rcomments .all_replies{
+    margin-top: 1%;
+    margin-left: 0%;
+    color: rgb(40, 37, 37);
+    display: flex;
+    flex-direction: column;
+    gap: 0rem !important;
+    opacity: 0.8;
+    border-radius: 5px;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding-block: 1rem;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.rcomments .all_replies li:nth-child(1){
+    font-size: 16px;
+}
+.rcomments .all_replies li:nth-child(2){
+    font-size: 14px;
+}
+.comment{
+    /* border: 1px solid ; */
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+.comment main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.comment main div textarea{
+    height: 130px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    font-size: 16px;
+    outline: none;
+}
+.comment main div{
+    display: flex;
+    gap: 2rem;
+}
+.comment main div label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+}
+.comment main div label input{
+    padding: 10px 5px;
+    border: 1px solid gainsboro;
+    font-size: 18px;
+    outline: none;
+}
+.comment .commNot{
+    font-family: Monts light;
+    font-size: 14px;
+    background-color: #0145FE;
+    color: white;
+    padding: 6px 10px;
+    width: fit-content;
+    opacity: .7;
+    border-radius: 5px;
+    margin: auto;
+    transition: 1s linear .2s;
+}
+.comment button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 15px;
+    background: #0145FE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width:620px){
+    .blogread{
+        width: 80%;
+        margin-top: -3rem;
+    }
+    .blogread .bread_title{
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 1rem;
+        padding-top: 2rem;
+    }
+    .blogread .bread_date{
+        font-size: 16px;
+        gap: 5px;
+    }
+    .blogread .bread_date b a{
+        font-size: 12px;
+    }
+    .blogread .bread_date .authorIcon{
+        width: 40px;
+        height: 40px;
+    }
+    .blogread .share_socials{
+        padding: 1rem 0;
+    }
+    .blogread .bread_customTags ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    }
+    .blogread .bread_customTags li{
+        font-size: 15px;
+    }
+    .blogread .share_socials h3{
+        font-size: 20px;
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
+    .blogread .share_socials span img{
+        width: 30px;
+    }
+    .blogread .share_socials span a{
+        padding-right: .5rem;
+    }
+    .blogread .blog_article .blog_body{
+        margin-block: 1rem;
+    }
+    .ql-container.ql-snow{
+        font-size: 18px;
+    }
+    .blogread .braed_author h2{
+        font-size: 20px;
+    }
+    .blogread .braed_author h3{
+        font-size: 20px;
+    }
+    .blogread .braed_author p{
+        padding: 5px;
+        font-size: 16px;
+    }
+    .blogread .braed_author p a{
+        font-size: 16px;
+        padding: 5px;
+    }
+    .blogread .author_socials img{
+        width: 25px;
+    }
+    .braed_author .authorImg{
+        width: 100px;
+        height: 100px;
+    }
+    .otherReadsHeader{
+        font-size: 22px;
+    }
+    .readMore{
+        flex-direction: column;
+        margin-top: 0rem;
+        gap: 1rem;
+        padding: 0;
+    }
+    .rcomments{
+        margin-top: 0rem;
+    }
+    .rcomments h1{
+        font-size: 20px;
+    }
+    .rcomments main ul li:nth-child(1){
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .rcomments main ul li:nth-child(2){
+        font-size: 14px;
+    }
+    .comment h1{
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+    .comment main div{
+        flex-direction: column;
+    }
+    .comment main div label{
+        font-size: 18px;
+    }
+    .comment main div label input{
+        font-size: 14px;
+    }
+}

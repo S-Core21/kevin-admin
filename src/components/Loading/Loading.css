@@ -1,0 +1,20 @@
+.loading_content{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading_content img {
+    animation: loading 1.5s infinite alternate; /* Animation name, duration, iteration count, and direction */
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    100% {
+      transform: scale(1.2); /* Increased size */
+    }
+  }
+  

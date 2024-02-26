@@ -1,7 +1,7 @@
 import React from 'react'
 import BlogFrame from '../blogFrame/blogFrame'
 import axios from 'axios'
-// import {setupCache} from 'axios'
+import Loading from "../../components/Loading/Loading";
 import { useState, useEffect } from 'react'
 import './blogPost.css'
 
@@ -21,7 +21,7 @@ const BlogPost = () => {
       axios.get(`${baseurl}/blogs`)
         .then(response => {
           localStorage.setItem('cacheData', JSON.stringify(response))
-          // setData(response.data.blogs)
+          setData(response.data.blogs)
           console.log('data is cached')
         })
         .catch(err => {
@@ -39,7 +39,7 @@ const BlogPost = () => {
         axios.get(`${baseurl}/blogs`)
           .then(response => {
             localStorage.setItem('cacheData', JSON.stringify(response))
-            // setData(response.data.blogs)
+            setData(response.data.blogs)
             console.log('data is cached')
           })
           .catch(err => {
@@ -47,12 +47,12 @@ const BlogPost = () => {
           })
       }
       console.log('data timed out')
-    }, 1 * 60 * 1000)
+    }, 3000)
 
-    const cachedData3 = localStorage.getItem('cacheData')
-    const newData = JSON.parse(cachedData3)
-    const blogData = newData.data.blogs
-    setData(blogData)
+    // const cachedData3 = localStorage.getItem('cacheData')
+    // const newData = JSON.parse(cachedData3)
+    // const blogData = newData.data.blogs
+    // setData(blogData)
 
     return () => clearTimeout(timer)
 
@@ -71,13 +71,20 @@ const BlogPost = () => {
                     key={item._id}
                     image= {item.image ? item.image : '/images/blog1.png'}
                     date={item.createdAt.slice(0, 10)}
-                    hashtag1={item.tagOne}
-                    hashtag2={item.tagTwo}
-                    hashtag3={item.tagThree}
+                    tagOne={item.tagOne}
+                    tagTwo={item.tagTwo}
+                    tagThree={item.tagThree}
+                    tagFour={item.tagOne}
+                    tagFive={item.tagTwo}
+                    tagSix={item.tagThree}
                     title={item.title}
+                    body={item.body}
                     blogSnippet={item.snippet}
                     readLength={item.readMins}
                     id={item._id}
+                    author={item.author}
+                    createdAt={item.createdAt}
+                    comments={item.comments}
                   />
                 </div>
 
@@ -85,6 +92,9 @@ const BlogPost = () => {
             })
           }
         </>
+      }
+      {
+        !data && <Loading/>
       }
     </>
 

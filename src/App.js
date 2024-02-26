@@ -14,6 +14,8 @@ import Main from './pages/main/Main';
 import AddVideos from './pages/AddVideos/AddVideos';
 import VideoEdit from './components/VideoEdit/VideoEdit';
 import Newsletter from './pages/Newsletter/Newsletter';
+import CommentPage from './pages/CommentPage/CommentPage';
+import BlogRead from './components/blogread/blogread';
 
 function App() {
 
@@ -41,7 +43,8 @@ function App() {
           <Route path='/' element={<Dashboard />}>
             <Route path='/' element={<Main />} />
             <Route path='/create-blog' element={<BlogForm />} />
-            <Route path='/blogs' element={<ViewBlogs />} />
+            <Route path='/blogs' element={<ViewBlogs />}/>
+            <Route path='/blogs/viewblog' element={<BlogRead/>} />
             <Route path='/add-user' element={<SignUp />} />
             <Route path='/blog-edit' element={<BlogEdit />} />
             <Route path='/view-users' element={<ViewUsers />} />
@@ -50,6 +53,7 @@ function App() {
             <Route path='/add-videos' element={<AddVideos />} />
             <Route path='/edit-videos' element={<VideoEdit />} />
             <Route path='/newsletter' element={<Newsletter />} />
+            <Route path='/comments' element={<CommentPage />} />
           </Route>
             <Route path='/add' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
